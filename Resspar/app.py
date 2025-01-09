@@ -16,7 +16,7 @@ conn.execute('CREATE TABLE IF NOT EXISTS users (name TEXT, email TEXT, password 
 conn.execute('CREATE TABLE IF NOT EXISTS resume (id TEXT,name TEXT,email TEXT,phone TEXT,skills TEXT)') 
 
 
-gemini_api_key = "AIzaSyD5LnBGm3GuVzX7Q2Ru97rkalFHPljDOxo"
+gemini_api_key = API_KEY;
 genai.configure(api_key = gemini_api_key)
 
 model = genai.GenerativeModel('gemini-pro-vision')
