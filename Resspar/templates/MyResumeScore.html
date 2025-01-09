@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Resume Score - Resspar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f0ec;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header {
+            background-color: #cb4154;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header img {
+            width: 120px; /* Bigger logo size */
+            height: auto;
+            margin-right: 20px;
+        }
+        .header h1 {
+            font-size: 3em; /* Bigger name size */
+        }
+        form {
+            background: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        button {
+            background-color: #cb4154;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b03643;
+        }
+        .results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo1.jpg" alt="Resspar Logo">
+        <h1>Resspar</h1>
+    </div>
+
+    <form id="resumeForm" enctype="multipart/form-data">
+        <input type="file" id="resume" name="resume" accept=".pdf" required>
+        <button type="button" id="testResume">TEST</button>
+    </form>
+
+    <div class="results" id="results">
+        <!-- Resume score and suggestions will be displayed here -->
+    </div>
+
+    <script>
+        document.getElementById('testResume').addEventListener('click', function() {
+            var formData = new FormData(document.getElementById('resumeForm'));
+            // Ensure you target the correct path for test.php in the fetch URL
+            fetch('test.php', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Assuming 'data' contains 'score' and 'suggestions'
+                document.getElementById('results').innerHTML = `
+                    <h2>Score: ${data.score}</h2>
+                    <h3>Suggestions:</h3>
+                    <ul>${data.suggestions.map(suggestion => `<li>${suggestion}</li>`).join('')}</ul>
+                `;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('results').innerHTML = 'Failed to process the resume. Please try again.';
+            });
+        });
+    </script>
+</body>
+</html>

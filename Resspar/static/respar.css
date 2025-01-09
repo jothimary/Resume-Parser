@@ -1,0 +1,248 @@
+/* General Styles */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f0ec; /* Light cream background for a softer look */
+    margin: 0;
+    padding: 0;
+    color: #5a3a31; /* Dark brown color for text to match the theme */
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cb4154; /* Updated theme color */
+    padding: 20px 40px; /* Increased padding for larger nav bar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.navbar img {
+    width: 80px; /* Larger logo */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.navbar a {
+    color: #fff; /* White text for contrast */
+    font-size: 0.9em; /* Decreased font size for the links */
+    text-decoration: none;
+    padding: 0 10px; /* Adjusted padding for space */
+}
+
+.navbar div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.navbar div:first-child span {
+    color: #fff;
+    font-weight: bold;
+    font-size: 2.5em; /* Adjusted font size for the site name */
+    margin-left: 10px;
+}
+
+/* Moving hyperlinks to the rightmost side */
+.navbar div:last-child {
+    margin-left: auto;
+}
+
+/* Form and Button Styles */
+input[type=text], input[type=password], input[type=email], button {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #cb4154; /* Border color to match the updated theme color */
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button {
+    background-color: #cb4154; /* Updated theme color */
+    color: white;
+    cursor: pointer;
+    width: 60%; /* Decreased width for buttons */
+    display: block; /* Needed to center button */
+    margin: 10px auto; /* Center button */
+}
+
+button:hover {
+    background-color: #b03643; /* Slightly darker on hover */
+}
+
+a {
+    color: #cb4154; /* Links color to match the updated theme color */
+}
+
+/* Home Page Layout Adjustments */
+.home-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding: 40px 20px; /* Increased padding for added height */
+    margin-top: 2rem; /* Added top margin */
+    margin-bottom: 2rem; /* Added bottom margin */
+}
+
+/* Home Page Layout Adjustments */
+.home-section img {
+    width: auto; /* Keep it auto to maintain aspect ratio */
+    max-width: 70%; /* Increase max-width to make the image larger */
+    display: block;
+    margin-left: 0; /* Keep the image aligned to the right */
+    margin-right: 0; /* Center the image if there's enough space */
+}
+
+
+.home-section div:first-child {
+    width: 50%;
+    text-align: center; /* Centered text and button */
+}
+
+/* Removing background boxes on the home section */
+.home-section div {
+    background: none;
+    box-shadow: none;
+    padding: 20px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #cb4154;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+/* Adjusting Resource Section for Increased Height */
+.resource-section, section#resources {
+    background-color: #f4f0ec; /* Light background color for the section */
+    padding: 40px 20px; /* Adjusted padding for increased height */
+    text-align: center; /* Center the heading */
+    margin: 2rem 1rem; /* Ensuring consistency with top and bottom margin adjustment */
+}
+
+/* Ensuring the Resources Items Fit Well */
+.resources {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the resource items */
+    gap: 20px; /* Space between resource items */
+    padding: 20px 0; /* Added padding for better spacing within the section */
+}
+
+.resource-item {
+    background-color: #fff; /* White background for each item */
+    border: 1px solid #ccc; /* Border to distinguish items */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Adjusted padding for more content or larger items */
+    width: calc(33.333% - 20px); /* Three items per row with gap accounted */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    margin-bottom: 20px; /* Ensures consistent spacing for items, especially when wrapping */
+}
+
+/* Responsive Adjustments for Resource Items on Smaller Screens */
+@media (max-width: 768px) {
+    .resource-item {
+        width: calc(50% - 20px); /* Two items per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .resource-item {
+        width: 100%; /* One item per row on very small screens */
+    }
+}
+.resource-item h3 {
+    margin-top: 0; /* Removes default top margin */
+}
+
+.resource-link {
+    display: inline-block;
+    background-color: #cb4154; /* Theme color for button/link */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none; /* Removes underline from link */
+    margin-top: 10px; /* Space above the link/button */
+}
+
+.resource-link:hover {
+    background-color: #b03643; /* Darker shade for hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .resource-item {
+        width: calc(50% - 20px); /* Two items per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .resource-item {
+        width: 100%; /* One item per row on very small screens */
+    }
+}
+
+/* Additional styles for Resources and About sections */
+
+/* Ensures consistency in background and text colors for Resources and About */
+section#resources, section#about {
+    background-color: #fff; /* Matches the general theme for sections */
+    color: #5a3a31; /* Ensures text color consistency */
+    margin: 2rem 1rem; /* Adds margin to both sides and top and bottom for spacing */
+    padding: 1rem; /* Padding inside sections */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    width: auto; /* Automatically adjusts width to fit content */
+    max-width: calc(100% - 2rem); /* Ensures the section does not exceed the page width, accounting for margin */
+    box-sizing: border-box; /* Ensures padding and border are included in the total width and height */
+    text-align: left; /* Aligns text to the left for a consistent look */
+} 
+
+/* Correcting margin-left redundancy by integrating it within the responsive design 
+@media (min-width: 769px) {
+    section#resources, section#about {
+        margin-left: 20px;  Adds a left margin to the entire section only on screens wider than 768px 
+    }
+}*/
+
+/* Section headings */
+section#resources h2, section#about h2 {
+    color: #cb4154; /* Theme color for headings for visual consistency */
+    margin-bottom: 1rem; /* Space below headings */
+}
+
+/* Featured Resources and Detailed About content */
+.featured-resources, .about-content {
+    text-align: left; /* Aligns text to the left for readability */
+}
+
+.featured-resources ul, .about-content h3, .about-content p {
+    margin-left: 1rem; /* Indent content for clear hierarchy */
+}
+
+.featured-resources li {
+    list-style-type: disc; /* Use disc for list items */
+    margin-bottom: 0.5rem; /* Space between list items */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    section#resources, section#about {
+        margin: 2rem 0.5rem; /* Reduced side margins for smaller screens to fit content better */
+        max-width: calc(100% - 1rem); /* Adjusts max-width to ensure content fits within smaller screens */
+    }
+}

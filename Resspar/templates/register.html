@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resspar - Register</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f0ec;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .header h2 {
+            font-size: 2.5em;
+        }
+        #register-form {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        input[type=text], input[type=email], input[type=password], button {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #cb4154;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b03643;
+        }
+        .footer {
+            background-color: #cb4154;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="/static/logo1.jpg" alt="Resspar Logo" style="width: 100px;">
+        <h2>Resspar - Resume Parser</h2>
+    </div>
+
+    <div id="register-form">
+        <form action="/register" method="post">
+            <input type="text" name="name" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already Registered? <a href="E:\Resspar\templates\login.html">Login Here</a></p>
+    </div>
+
+    <footer class="footer">
+        Connect with us on:
+        <a href="https://youtube.com">YouTube</a> |
+        <a href="https://linkedin.com">LinkedIn</a> |
+        <a href="https://instagram.com">Instagram</a> |
+        <a href="https://facebook.com">Facebook</a> |
+        <a href="https://twitter.com">Twitter</a>
+        <br>
+        Email us at: <a href="mailto:resspar@gmail.com">resspar@gmail.com</a>
+    </footer>
+</body>
+</html>

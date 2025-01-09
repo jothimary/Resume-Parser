@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile - Resspar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f0ec;
+            color: #5a3a31;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            width: fit;
+        }
+        .header {
+            background-color: #cb4154;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .header img {
+            width: 80px; /* Adjust based on your logo */
+            margin-right: 15px; /* Reduced space before nav bar */
+        }
+        .header span {
+            font-size: 32px; /* Increased size */
+            font-weight: bold; /* Make it bold */
+        }
+        .content {
+            background: white;
+            padding: 20px;
+            margin: 20px auto; /* Centered the content */
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            flex-grow: 1;
+        }
+        input, button {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #cb4154;
+            width: calc(100% - 22px); /* Adjust input width considering padding and border */
+        }
+        button {
+            background-color: #cb4154;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b03643;
+        }
+        .footer {
+            background-color: #cb4154;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="/static/logo1.jpg" alt="Resspar Logo">
+        <span>Resspar</span>
+    </div>
+    
+    <div class="content">
+        <h2>Welcome, {{user[0]}}</h2>
+    </div>
+    
+    <div class="footer">
+        <span>&copy; 2024 Resspar. All rights reserved.</span>
+    </div>
+</body>
+</html>

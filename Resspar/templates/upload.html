@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Resumes - Resspar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f0ec;
+            color: #5a3a31;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header {
+            background-color: #cb4154;
+            color: white;
+            padding: 20px 40px;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .header h1 {
+            font-size: 3em;
+        }
+        .upload-form {
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        input[type="file"] {
+            margin: 10px 0;
+        }
+        button {
+            background-color: #cb4154;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b03643;
+        }
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="/static/logo1.jpg" alt="Resspar Logo">
+        <h1>Resspar</h1>
+    </div>
+
+    <form class="upload-form" action="/uploadresume" method="post" enctype="multipart/form-data">
+        Select resumes to upload:
+        <input type="file" name="resumes" id="resumes" accept=".pdf">
+        <button type="submit">Upload Resume</button>
+    </form>
+
+    <table style="width:90%">
+        <tr>
+          <th style="width:20%">Name</th>
+          <th style="width:20%">E-Mail</th>
+          <th style="width:20%">Phone Number</th>
+          <th>Skills</th>
+        </tr>
+
+        {% for item in items %}
+        <tr>
+            <td>{{item[1]}}</td>
+            <td>{{item[2]}}</td>
+            <td>{{item[3]}}</td>
+            <td>{{item[4]}}</td>
+
+          </tr>
+
+
+        {% endfor %}
+
+      </table>
+      <a href="/filter"><button type="button" style="margin:20px ;">Filter Canditates</button> </a>
+</body>
+</html>
